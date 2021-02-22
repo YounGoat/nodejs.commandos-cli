@@ -1,0 +1,10 @@
+
+NAME
+        commandos init - Create bin file and command folder.
+
+SYNOPSIS
+        commandos init [ --verbose ]
+
+ARGUMENTS
+        --verbose 
+        Display details.

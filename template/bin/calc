@@ -1,0 +1,79 @@
+#!/usr/bin/env node
+
+'use strict';
+
+const MODULE_REQUIRE = 1
+	/* built-in */
+	
+	/* NPM */
+	, noda = require('noda')
+	, run = require('commandos/run')
+	
+	/* in-package */
+	;
+
+const argv = process.argv.slice(2);
+
+/**
+ * Process common options here.
+ * 处理通用选项。
+ */
+if (argv[0] == '-v') {
+	console.log('version 0.0.1');
+	process.exit(0);
+}
+
+run(argv, {
+	/**
+	 * Top command name. 
+	 * This value is ONLY displayed in help info. Real global command name is 
+	 * determined in "bin" property in package.json.
+	 * 顶层命令名。
+	 * 该值仅用于显示在帮助信息中，并不能实际决定全局命令的名称。
+	 */
+	name : /*<COMMAND_NAME>*/ 'calc' /*</COMMAND_NAME>*/,
+
+	/**
+	 * Brief description about the top command.
+	 * 顶层命令的简要描述。
+	 */
+	desc : 'A calulator offering basic arithmetic functions.',
+
+	/**
+	 * Pathname of folder where sub commands located.
+	 * 子命令程序所在目录。
+	 */
+	commandDir : noda.inResolve(/*<COMMAND_DIRNAME>*/ 'command' /*</COMMAND_DIRNAME>*/),
+
+	/**
+	 * Command alias.
+	 * 命令别名。
+	 */
+	alias: [
+		// E.g.
+		[ [ 'plus2' ], [ 'add', '2' ] ],
+		[ [ 'double' ], [ 'multi', '2' ] ],
+	],
+
+	/**
+	 * This function will be invoked before each command runs.
+	 * 在任一命令开始执行前调用此函数。
+	 * @param {string} command.name
+	 * @param {Object} command.argv
+	 */
+	beforeRun(command) {
+		let { argv, name } = command;
+	},
+
+	/**
+	 * This function will be invoked after each command runs.
+	 * 在任一命令结束执行后调用此函数。
+	 * @param {string}  command.name 
+	 * @param {Object}  command.argv
+	 * @param {Error}  [command.error]
+	 * @param {Any}    [command.result]
+	 */
+	afterRun(command) {
+		let { argv, name, error, result } = command;
+	},
+});

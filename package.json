@@ -1,0 +1,36 @@
+{
+    "dependencies": {
+        "colors": "^1.4.0",
+        "commandos": "^0.6.1",
+        "inquirer": "^7.3.3",
+        "noda": "^0.1.2",
+        "qir": "^0.1.0"
+    },
+    "scripts": {
+        "test": "mocha",
+        "demo": "node _workspace/mycommand/bin/main"
+    },
+    "name": "commandos-cli",
+    "version": "0.0.1",
+    "main": "index.js",
+    "keywords": [
+        "command",
+        "command-line",
+        "cli",
+        "options",
+        "dos",
+        "getopts"
+    ],
+    "homepage": "https://github.com/YounGoat/nodejs.commandos-cli",
+    "description": "Scaffording tool for command line program based on 'commandos'.",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/YounGoat/nodejs.commandos-cli.git"
+    },
+    "author": {
+        "name": "YounGoat",
+        "email": "youngoat@163.com",
+        "url": "https://youngoat.github.io"
+    },
+    "devDependencies": {}
+}

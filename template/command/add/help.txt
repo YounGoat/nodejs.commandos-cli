@@ -1,0 +1,18 @@
+
+NAME
+        calc add - Get sum of two or more numbers.
+
+SYNOPSIS
+        calc add <NUMBER> <NUMBER> [ ... ]
+        calc add [ --base <BASE_NUMBER> ]
+                 [ --system <SYSTEM_NAME> ]
+                 [ --number ] <NUMBER> 
+                 [ --number ] <NUMBER> 
+                 [ ... ]
+
+ARGUMENTS
+        --base <BASE_NUMBER>
+        Set base number.
+
+        <NUMBER>
+        # A number.
