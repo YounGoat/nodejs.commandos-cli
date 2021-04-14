@@ -53,6 +53,8 @@ run(argv, {
 		// E.g.
 	],
 
+	useManon: true,
+
 	/**
 	 * This function will be invoked before each command runs.
 	 * 在任一命令开始执行前调用此函数。
@@ -73,8 +75,6 @@ run(argv, {
 	 */
 	afterRun(data) {
 		let { error, argv } = data;
-		if (error) {
-			console.log(error.message || error);
-		}
+		error && console.log(error.message || error);
 	},
 });

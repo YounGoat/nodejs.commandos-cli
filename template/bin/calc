@@ -75,5 +75,6 @@ run(argv, {
 	 */
 	afterRun(command) {
 		let { argv, name, error, result } = command;
+		error && console.log(error.message || error);
 	},
 });
