@@ -10,8 +10,11 @@
         "test": "mocha",
         "demo": "node _workspace/mycommand/bin/main"
     },
+    "directories": {
+        "bin": "bin"
+    },
     "name": "commandos-cli",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "main": "index.js",
     "keywords": [
         "command",
